@@ -25,10 +25,7 @@ Plug 'jaxbot/syntastic-react', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 Plug 'mtscout6/syntastic-local-eslint.vim', { 'for': 'javacript' }
 
-Plug 'gorodinskiy/vim-coloresque', { 'for': 'css,scss,sass' }
-
-Plug 'vim-scripts/RltvNmbr.vim'
-Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'gorodinskiy/vim-coloresque', { 'for': 'javascript,css,scss,sass' }
 
 Plug 'tpope/vim-surround'
 
@@ -115,10 +112,6 @@ let g:NERDTreeIndicatorMapCustom = {
   \ "Ignored": "☒",
   \ "Unknown": "⁇"
   \ }
-" CtrlP
-" map <D-p> :CtrlP<CR>
-" set wildignore+=*/tmp/*,*.so,*.swp,*.zip,DS_STORE
-" let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 " TComment
 map <D-/> :TComment<CR>
 " Syntastic
