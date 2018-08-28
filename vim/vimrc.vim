@@ -73,6 +73,8 @@ nnoremap <D-j> <C-d>
 nnoremap <D-k> <C-u>
 vnoremap <D-j> :m '>+1<CR>gv
 vnoremap <D-k> :m '<-2<CR>gv
+vnoremap < <gv
+vnoremap > >gv
 map <D-w> <C-w>
 nnoremap <D-H> <C-w>h
 nnoremap <D-J> <C-w>j
