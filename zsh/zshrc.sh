@@ -4,7 +4,7 @@ export EDITOR=
 export ZSH=/Users/$USER/.oh-my-zsh
 source $HOME/dotFiles/zsh/frankenstein.zsh-theme
 ZSH_THEME=frankenstein
-plugins=(git)
+plugins=(git vscode sublime)
 for plugin ($plugins); do
     fpath=($HOME/dotFiles/zsh/plugins/oh-my-zsh/plugins/$plugin $fpath)
 done
