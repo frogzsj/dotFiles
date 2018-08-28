@@ -255,3 +255,13 @@ source $HOME/dotFiles/zsh/plugins/vim-mode.plugin.zsh
 export YSU_MODE=BESTMATCH
 export LSCOLORS=exfxcxdxbxexexabagacad
 
+# Check for "required" packages
+if ! type "brew" > /dev/null; then
+  echo "Homebrew not installed (http://brew.sh/)"
+fi
+if ! type "npm" > /dev/null; then
+  echo "NPM not installed (http://nodejs.org/)"
+fi
+if ! type "ag" > /dev/null; then
+  echo "SilverSearcher not installed (brew install the_silver_searcher)"
+fi
