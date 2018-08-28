@@ -88,15 +88,17 @@ inoremap <D-s> <Esc>:w<CR>i
 vnoremap <D-s> :w<CR>
 nnoremap <D-n> :bnext<CR>
 nnoremap <D-b> :bprev<CR>
-nnoremap <D-p> :GFiles<CR>
-nnoremap <D-P> :Files<CR>
-nnoremap <D-f> :Ag<CR>
 nnoremap <D-r> :%s/
 inoremap <D-r> <Esc>:%s/
 vnoremap <D-r> :%s/
 nnoremap <D-t> :terminal<CR>
 nnoremap <D-l> :vsplit<CR>
 nnoremap <D-o> :split<CR>
+nnoremap <D-e> :NERDTreeToggle<CR>
+nnoremap <D-p> :GFiles<CR>
+nnoremap <D-P> :Files<CR>
+nnoremap <D-f> :Ag<CR>
+nnoremap <D-/> :TComment<CR>
 nnoremap <leader>. `.
 nnoremap <leader>, `[
 nnoremap <leader>b ``
@@ -105,7 +107,6 @@ nnoremap <leader>m %
 nnoremap <leader>f ^
 nnoremap <leader>q @q
 " NERDTree
-nnoremap <D-e> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeShowHidden=1
 let g:NERDTreeDirArrowExpandable = '+'
@@ -123,7 +124,6 @@ let g:NERDTreeIndicatorMapCustom = {
   \ "Unknown": "⁇"
   \ }
 " TComment
-nnoremap <D-/> :TComment<CR>
 " Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -158,7 +158,7 @@ let g:UltiSnipsExpandTrigger="<Tab>"
 let g:UltiSnipsJumpForwardTrigger="<C-b>"
 let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsSnippetDirectories = ['/Users/frogzsj/dotFiles/vim']
+let g:UltiSnipsSnippetDirectories = [$HOME + "/dotFiles/vim"]
 
 " Remove trailing whitespace on save
 function! s:RemoveTrailingWhitespaces()
