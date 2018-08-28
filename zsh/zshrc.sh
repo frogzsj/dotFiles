@@ -1,14 +1,17 @@
 # Path to your oh-my-zsh installation.
-export EDITOR='mvim -f --nomru -c "au VimLeave * !open -a Terminal"'
-export EDITOR=
-export ZSH=/Users/$USER/.oh-my-zsh
-source $HOME/dotFiles/zsh/frankenstein.zsh-theme
+export ZSH=$HOME/dotFiles/zsh/plugins/oh-my-zsh
+
+if ls $ZSH/custom/themes/frankenstein* 1> /dev/null 2>&1; then
+    # echo "files do exist"
+else
+    sudo cp $HOME/dotFiles/zsh/frankenstein.zsh-theme $ZSH/custom/themes
+fi
 ZSH_THEME=frankenstein
 plugins=(git vscode sublime)
 for plugin ($plugins); do
     fpath=($HOME/dotFiles/zsh/plugins/oh-my-zsh/plugins/$plugin $fpath)
 done
-source $ZSH/oh-my-zsh.sh
+source $HOME/dotFiles/zsh/plugins/oh-my-zsh/oh-my-zsh.sh
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
