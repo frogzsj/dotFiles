@@ -69,6 +69,7 @@ set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 set undofile
 set undodir=~/.vim/backup
+let mapleader = " "
 nnoremap ; :
 nnoremap : ;
 nnoremap <D-j> <C-d>
@@ -97,7 +98,6 @@ vnoremap <D-r> :%s/
 map <D-t> ;terminplitl<CR>
 map <D-l> ;vsplit<CR>
 map <D-o> ;split<CR>
-"<D-g>,<D-m>,<D-p>,<D-e>,<D-/> taken
 " NERDTree
 map <D-e> ;NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
