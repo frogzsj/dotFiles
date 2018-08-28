@@ -1,6 +1,12 @@
 # Path to your oh-my-zsh installation.
+export EDITOR=vim
 export ZSH=/Users/$USER/.oh-my-zsh
-ZSH_THEME=./frankenstein.zsh-theme
+source $HOME/dotFiles/zsh/frankenstein.zsh-theme
+ZSH_THEME=frankenstein
+plugins=(git)
+for plugin ($plugins); do
+    fpath=($HOME/dotFiles/zsh/plugins/oh-my-zsh/plugins/$plugin $fpath)
+done
 source $ZSH/oh-my-zsh.sh
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
@@ -234,13 +240,10 @@ add-zsh-hook chpwd auto-ls
 # Autocompletion and Syntax Highlighting go last
 # https://github.com/zsh-users/zsh-autosuggestions
 # https://github.com/zsh-users/zsh-syntax-highlighting
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/dotFiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=3'
-
-source $HOME/.brew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/git-it-on/git-it-on.plugin.zsh
-source ~/.zsh/pretty-time/pretty-time.zsh
-source ~/.zsh/ssh-connect/ssh-connect/ssh-connect.sh
-source ~/.zsh/you-should-use/you-should-use.zsh
+source $HOME/dotFiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/dotFiles/zsh/plugins/vi-mode.plugin.zsh
 export YSU_MODE=BESTMATCH
 export LSCOLORS=exfxcxdxbxexexabagacad
+
