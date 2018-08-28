@@ -6,8 +6,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-Plug 'kien/ctrlp.vim', { 'on': 'CtrlP' }
-
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': 'NERDTreeToggle' }
@@ -88,6 +86,8 @@ inoremap <D-s> <Esc>:w<CR>i
 vnoremap <D-s> :w<CR>
 map <D-n> :bnext<CR>
 map <D-b> :bprev<CR>
+map <D-p> :GFiles<CR>
+map <D-P> :Files<CR>
 map <D-f> :Ag<CR>
 nnoremap <D-r> :%s/
 inoremap <D-r> <Esc>:%s/
@@ -104,9 +104,9 @@ let NERDTreeShowHidden=1
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 " CtrlP
-map <D-p> :CtrlP<CR>
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,DS_STORE
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+" map <D-p> :CtrlP<CR>
+" set wildignore+=*/tmp/*,*.so,*.swp,*.zip,DS_STORE
+" let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 " TComment
 map <D-/> :TComment<CR>
 " Syntastic
