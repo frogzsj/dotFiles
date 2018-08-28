@@ -36,18 +36,6 @@ alias f='find . -name'
 alias grepe='grep -E -R'
 alias gg='git grep -i'
 
-# Git aliases
-# See .gitconfig
-
-# Damage Report!
-alias wtf="ls && echo && git status && git log -1"
-# Make some random strings
-alias rando="cat /dev/urandom | base64 | tr -dc 'a-km-zA-KM-Z02-9-_!@#$%^&*+|' | fold -w 16 | head -n 4"
-# Print lorem ipsum paragraph
-alias lorem="echo Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc."
-# Get the weather
-alias weather="curl wttr.in"
-
 # KEY BINDINGS
 # Create binding map
 typeset -A key
@@ -243,7 +231,7 @@ add-zsh-hook chpwd auto-ls
 source $HOME/dotFiles/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=3'
 source $HOME/dotFiles/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $HOME/dotFiles/zsh/plugins/vi-mode.plugin.zsh
+source $HOME/dotFiles/zsh/plugins/vim-mode.plugin.zsh
 export YSU_MODE=BESTMATCH
 export LSCOLORS=exfxcxdxbxexexabagacad
 
