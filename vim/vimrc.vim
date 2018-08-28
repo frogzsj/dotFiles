@@ -97,6 +97,13 @@ vnoremap <D-r> :%s/
 nnoremap <D-t> :terminal<CR>
 nnoremap <D-l> :vsplit<CR>
 nnoremap <D-o> :split<CR>
+nnoremap <leader>. `.
+nnoremap <leader>, `[
+nnoremap <leader>b ``
+nnoremap <leader>n *
+nnoremap <leader>m %
+nnoremap <leader>f ^
+nnoremap <leader>q @q
 " NERDTree
 nnoremap <D-e> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
