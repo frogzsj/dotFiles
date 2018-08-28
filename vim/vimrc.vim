@@ -63,10 +63,9 @@ set linespace=3
 set colorcolumn=+1
 set title
 set nocompatible
-filetype off
+filetype on
 if has('gui_running')
   set guifont=LektonNerdFontCompleteM-Regular:h21
-  set guioptions-=T
   set termguicolors
 endif
 " .swp strategy for Git reasons
@@ -118,8 +117,8 @@ set statusline+=%*
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 let g:syntastic_enable_signs = 1
-"let g:syntastic_javascript_checkers = ['eslint']
-"let g:syntastic_json_checkers = ['jsonlint']
+let g:javascript_plugin_flow = 1
+let g:jsx_ext_required = 0
 " Ale
 let b:ale_fixers = {'javascript': ['eslint'], 'json': ['jsonlint'], 'css': ['csslint'], 'scss': ['sass-lint']}
 let g:ale_fix_on_save = 1

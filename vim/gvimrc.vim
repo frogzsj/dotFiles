@@ -1,3 +1,6 @@
+set guioptions-=m
+set guioptions-=T
+
 if has('gui_running')
     macm File.Print key=<nop>
     macm File.Close key=<nop>

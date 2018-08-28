@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
-export EDITOR=vim
+export EDITOR='mvim -f --nomru -c "au VimLeave * !open -a Terminal"'
+export EDITOR=
 export ZSH=/Users/$USER/.oh-my-zsh
 source $HOME/dotFiles/zsh/frankenstein.zsh-theme
 ZSH_THEME=frankenstein
