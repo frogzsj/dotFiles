@@ -69,7 +69,7 @@ set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 set undofile
 set undodir=~/.vim/backup
-let mapleader = " "
+let mapleader = ' '
 nnoremap ; :
 nnoremap : ;
 nnoremap <D-j> <C-d>
@@ -107,21 +107,21 @@ nnoremap <leader>m %
 nnoremap <leader>f ^
 nnoremap <leader>q @q
 " NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd bufenter * if (winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeShowHidden=1
 let g:NERDTreeDirArrowExpandable = '+'
 let g:NERDTreeDirArrowCollapsible = '-'
 let g:NERDTreeIndicatorMapCustom = {
-  \ "Modified": "!",
-  \ "Staged": "$",
-  \ "Untracked": "?",
-  \ "Renamed": "»",
-  \ "Unmerged": "=",
-  \ "Deleted": "✘",
-  \ "Dirty": "~",
-  \ "Clean": "✔︎",
-  \ "Ignored": "☒",
-  \ "Unknown": "⁇"
+  \ 'Modified': '!',
+  \ 'Staged': '$',
+  \ 'Untracked': '?',
+  \ 'Renamed': '»',
+  \ 'Unmerged': '=',
+  \ 'Deleted': '✘',
+  \ 'Dirty': '~',
+  \ 'Clean': '✔︎',
+  \ 'Ignored': '☒',
+  \ 'Unknown': '⁇'
   \ }
 " TComment
 " Syntastic
@@ -154,17 +154,17 @@ let g:airline_solarized_bg='dark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 " Snippets
-let g:UltiSnipsExpandTrigger="<Tab>"
-let g:UltiSnipsJumpForwardTrigger="<C-b>"
-let g:UltiSnipsJumpBackwardTrigger="<C-z>"
-let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsSnippetDirectories = [$HOME + "/dotFiles/vim"]
+let g:UltiSnipsExpandTrigger='<Tab>'
+let g:UltiSnipsJumpForwardTrigger='<C-b>'
+let g:UltiSnipsJumpBackwardTrigger='<C-z>'
+let g:UltiSnipsEditSplit='vertical'
+let g:UltiSnipsSnippetDirectories = [$HOME + '/dotFiles/vim']
 
 " Remove trailing whitespace on save
 function! s:RemoveTrailingWhitespaces()
   "Save last cursor position
-  let l = line(".")
-  let c = col(".")
+  let l = line('.')
+  let c = col('.')
 
   %s/\s\+$//ge
 
@@ -179,14 +179,14 @@ endfunction
 function! DoWindowSwap()
     "Mark destination
     let curNum = winnr()
-    let curBuf = bufnr( "%" )
-    exe g:markedWinNum . "wincmd w"
+    let curBuf = bufnr( '%' )
+    exe g:markedWinNum . 'wincmd w'
     "Switch to source and shuffle dest->source
-    let markedBuf = bufnr( "%" )
+    let markedBuf = bufnr( '%' )
     "Hide and open so that we aren't prompted and keep history
     exe 'hide buf' curBuf
     "Switch to dest and shuffle source->dest
-    exe curNum . "wincmd w"
+    exe curNum . 'wincmd w'
     "Hide and open so that we aren't prompted and keep history
     exe 'hide buf' markedBuf
 endfunction
