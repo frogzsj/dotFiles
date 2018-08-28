@@ -40,6 +40,22 @@ alias f='find . -name'
 alias grepe='grep -E -R'
 alias gg='git grep -i'
 
+alias tls='tmux ls'
+alias tas='tmux new-session -A -s 0'
+alias tds='tmux detach'
+alias tw='tmux new-window'
+alias trw='tmux rename-window'
+alias tlw='tmux last-window'
+alias tnw='tmux next-window'
+alias tpw='tmux previous-window'
+alias tsw='tmux split-window -v'
+alias tswh='tmux split-window -h'
+alias tlp='tmux last-pane'
+alias tspu='tmux select-pane -U'
+alias tspd='tmux select-pane -D'
+alias tspd='tmux select-pane -L'
+alias tspr='tmux select-pane -R'
+
 # KEY BINDINGS
 # Create binding map
 typeset -A key
