@@ -1,6 +1,3 @@
-
-set nocompatible              " be iMproved, required
-filetype off                  " required
 " == VimPlug ==
 call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
@@ -40,6 +37,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
+Plug 'w0rp/ale'
 Plug 'obxhdx/vim-auto-highlight'
 
 Plug 'Yggdroot/indentLine'
@@ -49,8 +47,8 @@ Plug 'flazz/vim-colorschemes'
 Plug 'liuchengxu/space-vim-dark'
 call plug#end()
 
-colorscheme space-vim-dark
 hi LineNr ctermbg=NONE guibg=NONE
+colorscheme space-vim-dark
 " colorscheme hybrid
 
 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
@@ -61,11 +59,14 @@ set ignorecase
 set smartcase
 set incsearch
 set textwidth=130
+set linespace=3
 set colorcolumn=+1
 set termguicolors
 set guifont=LektonNerdFontCompleteM-Regular:h21
 set title
-:set guioptions-=T
+set guioptions-=T
+set nocompatible
+filetype off
 " .swp strategy for Git reasons
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
@@ -75,20 +76,26 @@ nnoremap <D-j> <C-d>
 nnoremap <D-k> <C-u>
 vnoremap <D-j> :m '>+1<CR>gv
 vnoremap <D-k> :m '<-2<CR>gv
-map <D-q> :q<CR>
+nnoremap <D-H> <C-w>h
+nnoremap <D-J> <C-w>j
+nnoremap <D-K> <C-w>k
+nnoremap <D-L> <C-w>l
+map <D-q> :q!<CR>
 nnoremap <D-s> :w<CR>
 inoremap <D-s> <Esc>:w<CR>i
 vnoremap <D-s> :w<CR>
 map <D-n> :bnext<CR>
 map <D-b> :bprev<CR>
 map <D-f> :Ag<CR>
-map <D-r> :%s/
+nnoremap <D-r> :%s/
+inoremap <D-r> <Esc>:%s/
+vnoremap <D-r> :%s/
 map <D-;> :
-map <D-w> <C-w>
-"map <D-o>
+map <D-t> :terminal<CR>
+map <D-l> :vsplit<CR>
+map <D-o> :split<CR>
+"map <D-w>
 "map <D-g>
-"map <D-t>
-"map <D-l>
 "map <D-m>
 " NERDTree
 map <D-e> :NERDTreeToggle<CR>
@@ -109,8 +116,14 @@ set statusline+=%*
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 1
 let g:syntastic_enable_signs = 1
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_json_checkers = ['jsonlint']
+"let g:syntastic_javascript_checkers = ['eslint']
+"let g:syntastic_json_checkers = ['jsonlint']
+" Ale
+let b:ale_fixers = {'javascript': ['eslint'], 'json': ['jsonlint'], 'css': ['csslint'], 'scss': ['sass-lint']}
+let g:ale_fix_on_save = 1
+let g:ale_sign_column_always = 1
+filetype plugin indent on
+syntax on
 " Devicons
 let g:webdevicons_enable = 1
 let g:webdevicons_enable_nerdtree = 1
@@ -136,5 +149,4 @@ function! s:RemoveTrailingWhitespaces()
 
   call cursor(l,c)
 endfunction
-
 au BufWritePre * :call <SID>RemoveTrailingWhitespaces()
