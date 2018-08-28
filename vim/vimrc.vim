@@ -77,6 +77,7 @@ nnoremap <D-j> <C-d>
 nnoremap <D-k> <C-u>
 vnoremap <D-j> :m '>+1<CR>gv
 vnoremap <D-k> :m '<-2<CR>gv
+map <D-w> <C-w>
 nnoremap <D-H> <C-w>h
 nnoremap <D-J> <C-w>j
 nnoremap <D-K> <C-w>k
@@ -95,9 +96,7 @@ map <D-;> :
 map <D-t> :terminal<CR>
 map <D-l> :vsplit<CR>
 map <D-o> :split<CR>
-"map <D-w>
-"map <D-g>
-"map <D-m>
+"<D-g>,<D-m>,<D-p>,<D-e>,<D-/> taken
 " NERDTree
 map <D-e> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -151,3 +150,25 @@ function! s:RemoveTrailingWhitespaces()
   call cursor(l,c)
 endfunction
 au BufWritePre * :call <SID>RemoveTrailingWhitespaces()
+
+function! MarkWindowSwap()
+    let g:markedWinNum = winnr()
+endfunction
+
+function! DoWindowSwap()
+    "Mark destination
+    let curNum = winnr()
+    let curBuf = bufnr( "%" )
+    exe g:markedWinNum . "wincmd w"
+    "Switch to source and shuffle dest->source
+    let markedBuf = bufnr( "%" )
+    "Hide and open so that we aren't prompted and keep history
+    exe 'hide buf' curBuf
+    "Switch to dest and shuffle source->dest
+    exe curNum . "wincmd w"
+    "Hide and open so that we aren't prompted and keep history
+    exe 'hide buf' markedBuf
+endfunction
+
+nmap <silent> <D-m> :call MarkWindowSwap()<CR>
+nmap <silent> <D-g> :call DoWindowSwap()<CR>
