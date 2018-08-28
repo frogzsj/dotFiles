@@ -61,12 +61,14 @@ set incsearch
 set textwidth=130
 set linespace=3
 set colorcolumn=+1
-set termguicolors
-set guifont=LektonNerdFontCompleteM-Regular:h21
 set title
-set guioptions-=T
 set nocompatible
 filetype off
+if has('gui_running')
+  set guifont=LektonNerdFontCompleteM-Regular:h21
+  set guioptions-=T
+  set termguicolors
+endif
 " .swp strategy for Git reasons
 set backupdir=~/.vim/backup
 set directory=~/.vim/backup
