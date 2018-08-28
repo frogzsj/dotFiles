@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/franz/.oh-my-zsh
-ZSH_THEME=frankenstein
+export ZSH=/Users/$USER/.oh-my-zsh
+ZSH_THEME=./frankenstein.zsh-theme
 source $ZSH/oh-my-zsh.sh
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
@@ -45,18 +45,6 @@ alias weather="curl wttr.in"
 # KEY BINDINGS
 # Create binding map
 typeset -A key
-
-key[Home]="$terminfo[khome]"
-key[End]="$terminfo[kend]"
-key[Insert]="$terminfo[kich1]"
-key[Backspace]="$terminfo[kbs]"
-key[Delete]="$terminfo[kdch1]"
-key[Up]="$terminfo[kcuu1]"
-key[Down]="$terminfo[kcud1]"
-key[Left]="$terminfo[kcub1]"
-key[Right]="$terminfo[kcuf1]"
-key[PageUp]="$terminfo[kpp]"
-key[PageDown]="$terminfo[knp]"
 
 # setup key accordingly
 [[ -n "$key[Home]"      ]] && bindkey -- "$key[Home]"      beginning-of-line
@@ -253,10 +241,6 @@ source $HOME/.brew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/git-it-on/git-it-on.plugin.zsh
 source ~/.zsh/pretty-time/pretty-time.zsh
 source ~/.zsh/ssh-connect/ssh-connect/ssh-connect.sh
-source ~/.fzf.zsh
 source ~/.zsh/you-should-use/you-should-use.zsh
 export YSU_MODE=BESTMATCH
-
-bindkey '^P' fuzzy-search-and-edit
-
 export LSCOLORS=exfxcxdxbxexexabagacad
