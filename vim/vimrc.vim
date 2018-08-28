@@ -69,10 +69,12 @@ set backupdir=~/.vim/backup
 set directory=~/.vim/backup
 set undofile
 set undodir=~/.vim/backup
+nnoremap ; :
+nnoremap : ;
 nnoremap <D-j> <C-d>
 nnoremap <D-k> <C-u>
-vnoremap <D-j> :m '>+1<CR>gv
-vnoremap <D-k> :m '<-2<CR>gv
+vnoremap <D-j> ;m '>+1<CR>gv
+vnoremap <D-k> ;m '<-2<CR>gv
 vnoremap < <gv
 vnoremap > >gv
 map <D-w> <C-w>
@@ -80,25 +82,24 @@ nnoremap <D-H> <C-w>h
 nnoremap <D-J> <C-w>j
 nnoremap <D-K> <C-w>k
 nnoremap <D-L> <C-w>l
-map <D-q> :q!<CR>
-nnoremap <D-s> :w<CR>
-inoremap <D-s> <Esc>:w<CR>i
-vnoremap <D-s> :w<CR>
-map <D-n> :bnext<CR>
-map <D-b> :bprev<CR>
-map <D-p> :GFiles<CR>
-map <D-P> :Files<CR>
-map <D-f> :Ag<CR>
+map <D-q> ;q!<CR>
+nnoremap <D-s> ;w<CR>
+inoremap <D-s> <Esc>;w<CR>i
+vnoremap <D-s> ;w<CR>
+map <D-n> ;bnext<CR>
+map <D-b> ;bprev<CR>
+map <D-p> ;GFiles<CR>
+map <D-P> ;Files<CR>
+map <D-f> ;Ag<CR>
 nnoremap <D-r> :%s/
 inoremap <D-r> <Esc>:%s/
 vnoremap <D-r> :%s/
-map <D-;> :
-map <D-t> :terminal<CR>
-map <D-l> :vsplit<CR>
-map <D-o> :split<CR>
+map <D-t> ;terminplitl<CR>
+map <D-l> ;vsplit<CR>
+map <D-o> ;split<CR>
 "<D-g>,<D-m>,<D-p>,<D-e>,<D-/> taken
 " NERDTree
-map <D-e> :NERDTreeToggle<CR>
+map <D-e> ;NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeShowHidden=1
 let g:NERDTreeDirArrowExpandable = '+'
@@ -116,7 +117,7 @@ let g:NERDTreeIndicatorMapCustom = {
   \ "Unknown": "⁇"
   \ }
 " TComment
-map <D-/> :TComment<CR>
+map <D-/> ;TComment<CR>
 " Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -184,5 +185,5 @@ function! DoWindowSwap()
     exe 'hide buf' markedBuf
 endfunction
 
-nmap <silent> <D-m> :call MarkWindowSwap()<CR>
-nmap <silent> <D-g> :call DoWindowSwap()<CR>
+nmap <silent> <D-m> ;call MarkWindowSwap()<CR>
+nmap <silent> <D-g> ;call DoWindowSwap()<CR>
