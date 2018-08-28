@@ -15,16 +15,16 @@ Plug 'SirVer/ultisnips'
 Plug 'tomtom/tcomment_vim'
 
 Plug 'scrooloose/syntastic'
-Plug 'othree/yajs.vim', { 'for': 'javascript' }
-Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
-Plug 'moll/vim-node', { 'for': 'javascript' }
-Plug '1995eaton/vim-better-javascript-completion', { 'for': 'javascript' }
+Plug 'pangloss/vim-javascript'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'moll/vim-node'
+Plug '1995eaton/vim-better-javascript-completion'
 Plug 'vim-scripts/SyntaxComplete'
-Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
-Plug 'elzr/vim-json', { 'for': 'json' }
-Plug 'jaxbot/syntastic-react', { 'for': 'javascript' }
-Plug 'mxw/vim-jsx', { 'for': 'javascript' }
-Plug 'mtscout6/syntastic-local-eslint.vim', { 'for': 'javacript' }
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'elzr/vim-json'
+Plug 'jaxbot/syntastic-react'
+Plug 'mxw/vim-jsx'
+Plug 'mtscout6/syntastic-local-eslint.vim'
 
 Plug 'gorodinskiy/vim-coloresque', { 'for': 'javascript,css,scss,sass' }
 
@@ -133,6 +133,10 @@ let g:syntastic_check_on_wq = 1
 let g:syntastic_enable_signs = 1
 let g:javascript_plugin_flow = 1
 let g:jsx_ext_required = 0
+let g:mta_filetypes = {
+      \  'javascript.jsx': 1,
+      \  'javascript.js': 1
+      \}
 " Ale
 let b:ale_fixers = {'javascript': ['eslint'], 'json': ['jsonlint'], 'css': ['csslint'], 'scss': ['sass-lint']}
 let g:ale_fix_on_save = 1
