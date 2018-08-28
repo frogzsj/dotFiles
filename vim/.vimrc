@@ -1,116 +1,132 @@
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
+" == VimPlug ==
+call plug#begin('~/.vim/plugged')
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
-" let Vundle manage Vundle, required
-" Plugin 'VundleVim/Vundle.vim'
+Plug 'kien/ctrlp.vim', { 'on': 'CtrlP' }
 
-" The following are examples of different formats supported.
-" Keep Plugin commands between vundle#begin/end.
-" plugin on GitHub repo
-" Plugin 'tpope/vim-fugitive'
-" plugin from http://vim-scripts.org/vim/scripts.html
-" Plugin 'L9'
-" Git plugin not hosted on GitHub
-" Plugin 'git://git.wincent.com/command-t.git'
-" git repos on your local machine (i.e. when working on your own plugin)
-" Plugin 'file:///home/gmarik/path/to/plugin'
-" The sparkup vim script is in a subdirectory of this repo called vim.
-" Pass the path to set the runtimepath properly.
-" Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-" Install L9 and avoid a Naming conflict if you've already installed a
-" different version somewhere else.
-" Plugin 'ascenator/L9', {'name': 'newL9'}
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': 'NERDTreeToggle' }
+Plug 'ryanoasis/vim-devicons'
 
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'ctrlpvim/ctrlp.vim'
-" Plugin 'myusuf3/numbers.vim'
-Plugin 'jeffkreeftmeijer/vim-numbertoggle'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'RltvNmbr.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'jaxbot/syntastic-react'
-Plugin 'tpope/vim-fugitive'
+Plug 'tomtom/tcomment_vim'
 
-Plugin 'ervandew/supertab'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'mxw/vim-jsx'
-Plugin 'pangloss/vim-javascript'
-Plugin 'obxhdx/vim-auto-highlight'
+Plug 'scrooloose/syntastic'
+Plug 'othree/yajs.vim', { 'for': 'javascript' }
+Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
+Plug 'moll/vim-node', { 'for': 'javascript' }
+Plug '1995eaton/vim-better-javascript-completion', { 'for': 'javascript' }
+Plug 'vim-scripts/SyntaxComplete'
+Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
+Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'jaxbot/syntastic-react', { 'for': 'javascript' }
+Plug 'mxw/vim-jsx', { 'for': 'javascript' }
+Plug 'mtscout6/syntastic-local-eslint.vim', { 'for': 'javacript' }
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+Plug 'gorodinskiy/vim-coloresque', { 'for': 'css,scss,sass' }
 
+Plug 'vim-scripts/RltvNmbr.vim'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
-" CONFIGURATION
-" --< VIM >------------------------------------------
+Plug 'tpope/vim-surround'
+
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
+Plug 'obxhdx/vim-auto-highlight'
+
+Plug 'Yggdroot/indentLine'
+Plug 'Raimondi/delimitMate'
+Plug 'valloric/MatchTagAlways'
+Plug 'flazz/vim-colorschemes'
+Plug 'liuchengxu/space-vim-dark'
+call plug#end()
+
+colorscheme space-vim-dark
+hi LineNr ctermbg=NONE guibg=NONE
+" colorscheme hybrid
+
 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-colorscheme molokai
-set textwidth=120
+set relativenumber number
+set laststatus=2  " always show status bar
+set hls " highlight search
+set ignorecase
+set smartcase
+set incsearch
+set textwidth=130
 set colorcolumn=+1
-
-" ----< KEY MAPS >-----------------------------------
-map <D-q> :q
-map <D-s> :w
-
-" --< CtrlP >------------------------------------
-let g:ctrlp_map = '<c-0>'
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-map <C-p> :CtrlPMRU<CR>
-let g:ctrlp_working_path_mode = 'ra'
-
-" --< SYNTASTIC >------------------------------------
+set termguicolors
+set guifont=LektonNerdFontCompleteM-Regular:h21
+set title
+:set guioptions-=T
+" .swp strategy for Git reasons
+set backupdir=~/.vim/backup
+set directory=~/.vim/backup
+set undofile
+set undodir=~/.vim/backup
+nnoremap <D-j> <C-d>
+nnoremap <D-k> <C-u>
+vnoremap <D-j> :m '>+1<CR>gv
+vnoremap <D-k> :m '<-2<CR>gv
+map <D-q> :q<CR>
+nnoremap <D-s> :w<CR>
+inoremap <D-s> <Esc>:w<CR>i
+vnoremap <D-s> :w<CR>
+map <D-n> :bnext<CR>
+map <D-b> :bprev<CR>
+map <D-f> :Ag<CR>
+map <D-r> :%s/
+map <D-;> :
+map <D-w> <C-w>
+"map <D-o>
+"map <D-g>
+"map <D-t>
+"map <D-l>
+"map <D-m>
+" NERDTree
+map <D-e> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let NERDTreeShowHidden=1
+let g:NERDTreeDirArrowExpandable = '+'
+let g:NERDTreeDirArrowCollapsible = '-'
+" CtrlP
+map <D-p> :CtrlP<CR>
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,DS_STORE
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+" TComment
+map <D-/> :TComment<CR>
+" Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
 let g:syntastic_enable_signs = 1
-
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_typescript_tsc_fname = ''
-
-" --< NERDTREE >-------------------------------------
-map <D-e> :NERDTreeToggle<CR>
-let NERDTreeQuitOnOpen=1
-
-" --< NUMBERS >--------------------------------------
-autocmd InsertEnter * :set number
-" autocmd InsertLeave * :set relativenumber
-:set number
-" --< AIRLINE >--------------------------------------
-set laststatus=2
-let g:airline_theme='solarized'
+let g:syntastic_json_checkers = ['jsonlint']
+" Devicons
+let g:webdevicons_enable = 1
+let g:webdevicons_enable_nerdtree = 1
+let g:webdevicons_conceal_nerdtree_brackets = 1
+let g:webdevicons_enable_airline_tabline = 1
+let g:webdevicons_enable_airline_statusline = 1
+let g:webdevicons_enable_ctrlp = 1
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:DevIconsEnableFoldersOpenClose = 1
+" Airline
+let g:airline_theme='hybrid'
 let g:airline_solarized_bg='dark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
-" --< MACROS >--------------------------------------
-
-" Remove trailing whitespace on save for ruby files.
+" Remove trailing whitespace on save
 function! s:RemoveTrailingWhitespaces()
   "Save last cursor position
   let l = line(".")
