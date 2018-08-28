@@ -11,6 +11,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': 'NERDTreeToggle' }
 Plug 'ryanoasis/vim-devicons'
 
+Plug 'SirVer/ultisnips'
 Plug 'tomtom/tcomment_vim'
 
 Plug 'scrooloose/syntastic'
@@ -143,6 +144,12 @@ let g:airline_theme='hybrid'
 let g:airline_solarized_bg='dark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+" Snippets
+let g:UltiSnipsExpandTrigger="<Tab>"
+let g:UltiSnipsJumpForwardTrigger="<C-b>"
+let g:UltiSnipsJumpBackwardTrigger="<C-z>"
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetDirectories = ['/Users/frogzsj/dotFiles/vim']
 
 " Remove trailing whitespace on save
 function! s:RemoveTrailingWhitespaces()
