@@ -32,3 +32,5 @@
     s = status
     d = diff
     g = grep -i
+[core]
+    excludesfile = ~/dotFiles/gitignore_global
