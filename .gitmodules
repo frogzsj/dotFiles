@@ -10,3 +10,6 @@
 	path = zsh/plugins/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
   ignore = dirty
+[submodule "fonts/nerd-fonts"]
+	path = fonts/nerd-fonts
+	url = https://github.com/frogzsj/nerd-fonts.git
