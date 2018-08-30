@@ -265,3 +265,6 @@ fi
 if ! type "ag" > /dev/null; then
   echo "SilverSearcher not installed (brew install the_silver_searcher)"
 fi
+if ! type "ctags" > /dev/null; then
+  echo "CTags not installed (brew install ctags)"
+fi

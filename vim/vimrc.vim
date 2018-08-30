@@ -99,6 +99,8 @@ nnoremap <D-p> :GFiles<CR>
 nnoremap <D-P> :Files<CR>
 nnoremap <D-f> :Ag<CR>
 nnoremap <D-/> :TComment<CR>
+nnoremap <D-d> <C-]>
+autocmd BufWritePost * call system("ctags -R")
 nnoremap <leader>. `.
 nnoremap <leader>, `[
 nnoremap <leader>b ``
@@ -125,6 +127,8 @@ let g:NERDTreeIndicatorMapCustom = {
   \ }
 " TComment
 " Syntastic
+let g:ale_sign_error = '⌦'
+let g:ale_sign_warning = '⦿'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
