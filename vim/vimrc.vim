@@ -78,22 +78,16 @@ vnoremap <D-j> :m '>+1<CR>gv
 vnoremap <D-k> :m '<-2<CR>gv
 vnoremap < <gv
 vnoremap > >gv
-nnoremap <D-H> <C-w>h
-nnoremap <D-J> <C-w>j
-nnoremap <D-K> <C-w>k
-nnoremap <D-L> <C-w>l
 nnoremap <D-q> :q!<CR>
 nnoremap <D-s> :w<CR>
 inoremap <D-s> <Esc>:w<CR>i
 vnoremap <D-s> :w<CR>
-nnoremap <D-n> :bnext<CR>
-nnoremap <D-b> :bprev<CR>
 nnoremap <D-r> :%s/
 inoremap <D-r> <Esc>:%s/
 vnoremap <D-r> :%s/
-nnoremap <D-t> :terminal<CR>
-nnoremap <D-l> :vsplit<CR>
-nnoremap <D-o> :split<CR>
+nnoremap <D-b> ``
+nnoremap <D-n> *
+nnoremap <D-.> `.
 nnoremap <D-e> :NERDTreeToggle<CR>
 nnoremap <D-p> :GFiles<CR>
 nnoremap <D-P> :Files<CR>
@@ -101,12 +95,16 @@ nnoremap <D-f> :Ag<CR>
 nnoremap <D-/> :TComment<CR>
 nnoremap <D-d> <C-]>
 autocmd BufWritePost * call system("ctags -R")
-nnoremap <leader>. `.
-nnoremap <leader>, `[
-nnoremap <leader>b ``
-nnoremap <leader>n *
-nnoremap <leader>m %
-nnoremap <leader>f ^
+nnoremap <leader>bn :bnext<CR>
+nnoremap <leader>bb :bprev<CR>
+nnoremap <leader>ws :split<CR>
+nnoremap <leader>wv :vsplit<CR>
+nnoremap <leader>wh <C-w>h
+nnoremap <leader>wj <C-w>j
+nnoremap <leader>wk <C-w>k
+nnoremap <leader>wl <C-w>l
+nnoremap <leader>om %
+nnoremap <leader>to :terminal<CR>
 nnoremap <leader>q @q
 " NERDTree
 autocmd bufenter * if (winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) | q | endif
