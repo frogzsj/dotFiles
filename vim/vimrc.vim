@@ -32,6 +32,7 @@ Plug 'tpope/vim-surround'
 
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'jreybert/vimagit'
 
 Plug 'w0rp/ale'
 Plug 'obxhdx/vim-auto-highlight'
@@ -103,7 +104,18 @@ nnoremap <leader>wh <C-w>h
 nnoremap <leader>wj <C-w>j
 nnoremap <leader>wk <C-w>k
 nnoremap <leader>wl <C-w>l
+nnoremap <leader>wc. :close<CR>
+nnoremap <leader>wch <C-w>h:close<CR>
+nnoremap <leader>wcj <C-w>j:close<CR>
+nnoremap <leader>wck <C-w>k:close<CR>
+nnoremap <leader>wcl <C-w>l:close<CR>
 nnoremap <leader>om %
+nnoremap <leader>oc cs
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>gpl :Gpull<CR>
+nnoremap <leader>gps :Gpush<CR>
+nnoremap <leader>gc :Magit<CR>
 nnoremap <leader>to :terminal<CR>
 nnoremap <leader>q @q
 " NERDTree
