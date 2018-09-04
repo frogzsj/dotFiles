@@ -115,7 +115,7 @@ nnoremap <leader>wh <C-w>h
 nnoremap <leader>wj <C-w>j
 nnoremap <leader>wk <C-w>k
 nnoremap <leader>wl <C-w>l
-nnoremap <leader>wc. :close<CR>
+nnoremap <leader>wcc :close<CR>
 nnoremap <leader>wch <C-w>h:close<CR>
 nnoremap <leader>wcj <C-w>j:close<CR>
 nnoremap <leader>wck <C-w>k:close<CR>
