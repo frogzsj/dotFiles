@@ -191,7 +191,7 @@ let g:UltiSnipsExpandTrigger='<Tab>'
 let g:UltiSnipsJumpForwardTrigger='<C-b>'
 let g:UltiSnipsJumpBackwardTrigger='<C-z>'
 let g:UltiSnipsEditSplit='vertical'
-let g:UltiSnipsSnippetDirectories = [$HOME + '/dotFiles/vim']
+let g:UltiSnipsSnippetDirectories = [$HOME.'/dotFiles/vim']
 
 " Automcommands
 function! s:RemoveTrailingWhitespaces()
