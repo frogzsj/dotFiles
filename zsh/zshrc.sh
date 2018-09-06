@@ -1,12 +1,12 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/dotFiles/zsh/plugins/oh-my-zsh
 
-if ls $ZSH/custom/themes/frankenstein* 1> /dev/null 2>&1; then
+if ls $ZSH/custom/themes/mine* 1> /dev/null 2>&1; then
     # echo "files do exist"
 else
-    sudo cp $HOME/dotFiles/zsh/frankenstein.zsh-theme $ZSH/custom/themes
+    sudo cp $HOME/dotFiles/zsh/mine.zsh-theme $ZSH/custom/themes
 fi
-ZSH_THEME=frankenstein
+ZSH_THEME=mine
 plugins=(git vscode sublime)
 for plugin ($plugins); do
     fpath=($HOME/dotFiles/zsh/plugins/oh-my-zsh/plugins/$plugin $fpath)

@@ -41,15 +41,14 @@ Plug 'obxhdx/vim-auto-highlight'
 Plug 'Yggdroot/indentLine'
 Plug 'Raimondi/delimitMate'
 Plug 'valloric/MatchTagAlways'
-Plug 'flazz/vim-colorschemes'
 Plug 'liuchengxu/space-vim-dark'
 call plug#end()
 
 hi LineNr ctermbg=NONE guibg=NONE
-colorscheme space-vim-dark
+colorscheme mine
 
 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
-set relativenumber number
+set relativenumber number cursorline
 set laststatus=2
 set hlsearch incsearch
 set ignorecase smartcase
