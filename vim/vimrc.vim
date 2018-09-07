@@ -27,7 +27,7 @@ Plug 'jaxbot/syntastic-react'
 Plug 'mxw/vim-jsx'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 
-Plug 'gorodinskiy/vim-coloresque', { 'for': 'javascript,css,scss,sass' }
+Plug 'gorodinskiy/vim-coloresque'
 
 Plug 'tpope/vim-surround'
 
@@ -152,8 +152,8 @@ let g:NERDTreeIndicatorMapCustom = {
   \ 'Unknown': '⁇'
   \ }
 "" Syntastic / Ale
-let g:ale_sign_error = '⌦'
-let g:ale_sign_warning = '⦿'
+let g:ale_sign_error = 'X'
+let g:ale_sign_warning = '>'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -203,5 +203,5 @@ function! s:RemoveTrailingWhitespaces()
   call cursor(l,c)
 endfunction
 autocmd BufWritePre  * :call <SID>RemoveTrailingWhitespaces()
-autocmd BufWritePost * :call system("ctags -R")
+autocmd BufWritePost * :call system("ctags -R --exclude=*.vim")
 autocmd bufenter * if (winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) | q | endif
