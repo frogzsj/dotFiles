@@ -45,7 +45,7 @@ call SetGuiFor('String', '#87ff87', '')
 call SetGuiFor('Number', '#f9bb00', '')
 hi link Float Number
 call SetGuiFor('Boolean', '#4f97d7', '', 'bold')
-call SetGuiFor('Constant', '#4f97d7', '')
+call SetGuiFor('Constant', '#bcbcbc', '', 'bold')
 call SetGuiFor('Character', '#af0087', '')
 
 call SetGuiFor('Debug', '#303030', '#fff069')
@@ -66,8 +66,8 @@ hi link Structure Conditional
 hi link Keyword Conditional
 call SetGuiFor('Statement', '#FF62B0', '', 'none')
 call SetGuiFor('Directory', '#008700', '')
-call SetGuiFor('Type', '#c269fe', '', 'none')
-call SetGuiFor('Typedef', '#c269fe', '')
+call SetGuiFor('Type', '#4f97d7', '', 'none')
+call SetGuiFor('Typedef', '#4f97d7', '')
 call SetGuiFor('StorageClass', '#e18254', '')
 call SetGuiFor('Special', '#ff005f', '')
 call SetGuiFor('SpecialKey', '#af0087', '')
