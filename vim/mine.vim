@@ -60,7 +60,7 @@ hi link Macro Define
 call SetGuiFor('PreProc', '#FF62B0', '', 'bold')
 call SetGuiFor('PreCondit', '#FF62B0', '')
 
-call SetGuiFor('Conditional', '', '', 'bold')
+call SetGuiFor('Conditional', '#ffafaf', '', 'bold')
 hi link Repeat Conditional
 hi link Structure Conditional
 hi link Keyword Conditional
@@ -68,17 +68,17 @@ call SetGuiFor('Statement', '#FF62B0', '', 'none')
 call SetGuiFor('Directory', '#008700', '')
 call SetGuiFor('Type', '#c269fe', '', 'none')
 call SetGuiFor('Typedef', '#c269fe', '')
-call SetGuiFor('StorageClass', '#e18254', '', 'bold')
+call SetGuiFor('StorageClass', '#e18254', '')
 call SetGuiFor('Special', '#ff005f', '')
 call SetGuiFor('SpecialKey', '#af0087', '')
 call SetGuiFor('SpecialChar', '#af0087', '')
 call SetGuiFor('SpecialComment', '#544a65', '')
 
-call SetGuiFor('Comment', '#3a3a3a', '')
+call SetGuiFor('Comment', '#585858', '')
 call SetGuiFor('Todo', '#af0000', 'NONE', 'boldunderline')
 call SetGuiFor('Folded', '#eeeeee', '#65737e')
 call SetGuiFor('Question', '#b4d1b6', '#121212', 'italic')
-call SetGuiFor('Label', '#e18254', '')
+call SetGuiFor('Label', '#ff005f', '')
 
 call SetGuiFor('Search', '#f9bb00', '#000087')
 call SetGuiFor('IncSearch', '#f9bb00', '#005f00')
@@ -119,10 +119,14 @@ hi link vimHiGroup PreProc
 "" javascript
 hi link jsString String
 hi link jsAsyncKeyword Type
-call SetGuiFor('jsBraces', '#c269fe', '', 'bold')
-call SetGuiFor('jsObjectBraces', '#c269fe', '', 'bold')
-call SetGuiFor('jsBrackets', '#ffff87', '', 'bold')
-call SetGuiFor('jsParens', '', '', 'bold')
+call SetGuiFor('jsBraces', '#c269fe', '', '')
+call SetGuiFor('jsObjectBraces', '#c269fe', '', '')
+call SetGuiFor('jsBrackets', '#ffff87', '', '')
+call SetGuiFor('jsParens', '#FF4848', '', '')
+hi link jsFuncParens jsParens
+call SetGuiFor('jsParensIfElse', '#ffafaf', '', '')
+hi link jsParensSwitch jsParensIfElse
+hi link jsParensRepeat jsParensIfElse
 call SetGuiFor('jsModuleKeyword', '#4f97d7', '')
 call SetGuiFor('jsArrowFunction', '#4f97d7', '')
 call SetGuiFor('jsClassDefinition', '#4f97d7', '')
@@ -131,6 +135,7 @@ call SetGuiFor('jsClassDefinition', '#4f97d7', '')
 hi link jsonStringSQError Error
 "
 "" xml i.e. React
+call SetGuiFor('xmlTag', '', '', 'bold')
 call SetGuiFor('xmlTagName', '#ff005f', '')
 call SetGuiFor('xmlEndTag', '#4e4e4e', '')
 "
