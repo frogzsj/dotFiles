@@ -30,6 +30,10 @@ function! SetGuiFor(group, ...)
   execute histring
 endfunction
 
+let purple = '#af5fd7'
+let blue = '#4f97d7'
+let pink = '#ff87ff'
+
 call SetGuiFor('Normal', '#bcbcbc', '#212026')
 call SetGuiFor('Visual', '#e4e4e4', '#34323e')
 call SetGuiFor('Cursor', '#121212', '#ffff87', 'bold')
@@ -41,10 +45,10 @@ call SetGuiFor('CursorLineNr', '#f9bb00', '#303030')
 call SetGuiFor('ColorColumn', '', '#121212')
 call SetGuiFor('WildMenu', '#303030', '#86dc2f', 'bold')
 
-call SetGuiFor('String', '#87ff87', '')
+call SetGuiFor('String', '#87d700', '')
 call SetGuiFor('Number', '#f9bb00', '')
 hi link Float Number
-call SetGuiFor('Boolean', '#4f97d7', '', 'bold')
+call SetGuiFor('Boolean', blue, '', 'bold')
 call SetGuiFor('Constant', '#bcbcbc', '', 'bold')
 call SetGuiFor('Character', '#af0087', '')
 
@@ -54,20 +58,20 @@ call SetGuiFor('Function', '#f9bb00', '', 'bold')
 call SetGuiFor('Identifier', '#bcbcbc', '', 'bold')
 call SetGuiFor('Operator', '#ff005f', '')
 call SetGuiFor('Delimiter', '#121212', '#f9bb00')
-call SetGuiFor('Define', '#FF73B9', '')
+call SetGuiFor('Define', purple, '')
 hi link Include Define
 hi link Macro Define
-call SetGuiFor('PreProc', '#FF62B0', '', 'bold')
-call SetGuiFor('PreCondit', '#FF62B0', '')
+call SetGuiFor('PreProc', purple, '', 'bold')
+call SetGuiFor('PreCondit', purple, '')
 
-call SetGuiFor('Conditional', '#ffafaf', '', 'bold')
+call SetGuiFor('Conditional', pink, '', 'bold')
 hi link Repeat Conditional
 hi link Structure Conditional
 hi link Keyword Conditional
-call SetGuiFor('Statement', '#FF62B0', '', 'none')
+call SetGuiFor('Statement', purple, '', 'none')
 call SetGuiFor('Directory', '#008700', '')
-call SetGuiFor('Type', '#4f97d7', '', 'none')
-call SetGuiFor('Typedef', '#4f97d7', '')
+call SetGuiFor('Type', blue, '', 'none')
+call SetGuiFor('Typedef', blue, '')
 call SetGuiFor('StorageClass', '#e18254', '')
 call SetGuiFor('Special', '#ff005f', '')
 call SetGuiFor('SpecialKey', '#af0087', '')
@@ -82,18 +86,12 @@ call SetGuiFor('Label', '#ff005f', '')
 
 call SetGuiFor('Search', '#f9bb00', '#000087')
 call SetGuiFor('IncSearch', '#f9bb00', '#005f00')
-call SetGuiFor('MatchParen', '#86dc2f', 'NONE', 'boldunderline')
+call SetGuiFor('MatchParen', pink, 'NONE', 'boldunderline')
 
 call SetGuiFor('DiffAdd', '', '#005f00')
 call SetGuiFor('DiffChange', '#fff069', '#1c1c1c')
 call SetGuiFor('DiffDelete', '#e0211d', '#949494')
 call SetGuiFor('DiffText', '', '#808000')
-
-"" TODO Popup menu
-"call s:hi('Pmenu'      , 141 , s:bg1 , 'None' , 'None')
-"call s:hi('PmenuSel'   , 251 , 97    , 'None' , 'None')
-"call s:hi('PmenuSbar'  , 28  , 233   , 'None' , 'None')
-"call s:hi('PmenuThumb' , 160 , 97    , 'None' , 'None')
 
 call SetGuiFor('Warning', '#1c1c1c', '#808000', 'bold')
 call SetGuiFor('WarningMsg', '#1c1c1c', '#808000', 'bold')
@@ -119,25 +117,29 @@ hi link vimHiGroup PreProc
 "" javascript
 hi link jsString String
 hi link jsAsyncKeyword Type
-call SetGuiFor('jsBraces', '#c269fe', '', '')
-call SetGuiFor('jsObjectBraces', '#c269fe', '', '')
+call SetGuiFor('jsBraces', purple, '', '')
+call SetGuiFor('jsObjectBraces', purple, '', '')
+call SetGuiFor('jsDestructuringBraces', purple, '')
 call SetGuiFor('jsBrackets', '#ffff87', '', '')
 call SetGuiFor('jsParens', '#FF4848', '', '')
 hi link jsFuncParens jsParens
 call SetGuiFor('jsParensIfElse', '#ffafaf', '', '')
 hi link jsParensSwitch jsParensIfElse
 hi link jsParensRepeat jsParensIfElse
-call SetGuiFor('jsModuleKeyword', '#4f97d7', '')
-call SetGuiFor('jsArrowFunction', '#4f97d7', '')
-call SetGuiFor('jsClassDefinition', '#4f97d7', '')
+call SetGuiFor('jsModuleKeyword', blue, '')
+call SetGuiFor('jsArrowFunction', blue, '')
+call SetGuiFor('jsClassDefinition', blue, '')
+call SetGuiFor('jsFlowGroup', pink, '')
+hi link javascriptReact jsModuleKeyword
 "
 "" json
 hi link jsonStringSQError Error
 "
 "" xml i.e. React
-call SetGuiFor('xmlTag', '', '', 'bold')
+call SetGuiFor('xmlTag', blue, '', 'bold')
 call SetGuiFor('xmlTagName', '#ff005f', '')
 call SetGuiFor('xmlEndTag', '#4e4e4e', '')
+call SetGuiFor('xmlAttrib', '#e18254', '')
 "
 "" html
 hi link htmlSpecialTagName xmlTagName
