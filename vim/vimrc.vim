@@ -27,6 +27,7 @@ Plug 'jaxbot/syntastic-react'
 Plug 'mxw/vim-jsx'
 Plug 'mtscout6/syntastic-local-eslint.vim'
 
+Plug 'flazz/vim-colorschemes'
 Plug 'gorodinskiy/vim-coloresque'
 
 Plug 'tpope/vim-surround'
@@ -44,7 +45,6 @@ Plug 'valloric/MatchTagAlways'
 Plug 'liuchengxu/space-vim-dark'
 call plug#end()
 
-hi LineNr ctermbg=NONE guibg=NONE
 colorscheme mine
 
 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
@@ -181,7 +181,7 @@ let g:webdevicons_enable_ctrlp = 1
 let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 let g:DevIconsEnableFoldersOpenClose = 1
 "" Airline
-let g:airline_theme='bubblegum'
+let g:airline_theme='molokai'
 let g:airline_solarized_bg='dark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
