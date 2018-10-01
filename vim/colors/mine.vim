@@ -74,7 +74,7 @@ hi PreCondit       guifg=#A6E22E               gui=bold
 hi PreProc         guifg=#F92672
 hi Question        guifg=#66D9EF
 hi Repeat          guifg=#F92672               gui=bold
-hi Search          guifg=#000000 guibg=#FFE792
+hi Search          guifg=#232526 guibg=#455354 gui=underline
 " marks
 hi SignColumn      guifg=#A6E22E guibg=#232526
 hi SpecialChar     guifg=#F92672               gui=bold
@@ -125,7 +125,7 @@ else
    hi CursorLineNr    guifg=#FD971F               gui=none
    hi CursorColumn                  guibg=#293739
    hi ColorColumn                   guibg=#232526
-   hi LineNr          guifg=#465457 guibg=#232526
+   hi LineNr          guifg=#7E8E91 guibg=#232526
    hi NonText         guifg=#465457
    hi SpecialKey      guifg=#465457
 end
