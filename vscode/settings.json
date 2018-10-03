@@ -1,0 +1,89 @@
+{
+    "files.associations": {
+        "*.tmpl": "smarty"
+    },
+    "editor.fontSize": 16,
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true,
+    "workbench.editor.enablePreview": false,
+    "editor.tabSize": 2,
+    "editor.renderWhitespace": "boundary",
+    "editor.lineNumbers": "relative",
+    "window.zoomLevel": -1,
+    "javascript.validate.enable": false,
+    "workbench.colorTheme": "Monokai Dimmed",
+    "vim.incsearch": true,
+    "vim.hlsearch": true,
+    "vim.leader": "<space>",
+    "vim.normalModeKeyBindingsNonRecursive": [
+        { "before": [";"], "after": [":"] },
+        { "before": [":"], "after": [";"] },
+        { "before": ["<leader>", ","], "after": ["`", "`"] },
+        { "before": ["<leader>", "."], "after": ["`", "."] },
+        {
+            "before": ["<leader>", "b", "b"],
+            "commands": ["workbench.action.prevEditor"]
+        },
+        {
+            "before": ["<leader>", "b", "n"],
+            "commands": ["workbench.action.nextEditor"]
+        },
+        {
+            "before": ["<leader>", "m"],
+            "after": ["%"]
+        },
+        {
+            "before": ["<leader>", "q"],
+            "after": ["@", "q"]
+        },
+        {
+            "before": ["<leader>", "w", "s"],
+            "commands": [":split"]
+        },
+        {
+            "before": ["<leader>", "w", "v"],
+            "commands": [":vsplit"]
+        },
+        {
+            "before": ["<leader>", "w", "h"],
+            "after": ["<C-w>", "h"]
+        },
+        {
+            "before": ["<leader>", "w", "j"],
+            "after": ["<C-w>", "j"]
+        },
+        {
+            "before": ["<leader>", "w", "k"],
+            "after": ["<C-w>", "k"]
+        },
+        {
+            "before": ["<leader>", "w", "l"],
+            "after": ["<C-w>", "l"]
+        },
+        {
+            "before": ["<leader>", "w", "c", "c"],
+            "commands": ["workbench.action.closeActiveEditor"]
+        }
+    ],
+    "vim.insertModeKeyBindingsNonRecursive": [
+
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        },
+    ]
+}
