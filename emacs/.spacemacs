@@ -40,6 +40,7 @@ values."
      java
      javascript
      markdown
+     osx
      php
      scala
      shell
