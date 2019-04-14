@@ -32,4 +32,5 @@
 (require 'init-utils)
 (require 'init-keybinds)
 (require 'init-ui)
+(require 'init-languages)
 

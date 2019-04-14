@@ -73,6 +73,7 @@
 ;;; Code:
 
 (require 'spaceline)
+(require 'spaceline-segments)
 
 (require 'spaceline-all-the-icons-segments)
 (require 'spaceline-all-the-icons-separators)
@@ -133,16 +134,18 @@ Add ADDITIONAL-SEGMENTS to the end of the theme."
   (interactive)
   (spaceline-compile
    "all-the-icons"
-   '((all-the-icons-anzu
+   '(
+     (all-the-icons-anzu
       :face 'mode-line
       :skip-alternate t)
 
-     ((all-the-icons-modified
+     ((
+       all-the-icons-modified
+       all-the-icons-window-number
        all-the-icons-bookmark
        all-the-icons-dedicated
-       all-the-icons-window-number
        all-the-icons-eyebrowse-workspace
-       all-the-icons-buffer-size) :face highlight-face :skip-alternate t)
+       all-the-icons-evil-state) :face highlight-face :skip-alternate t)
 
      all-the-icons-separator-left-active-1
 

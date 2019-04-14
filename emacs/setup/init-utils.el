@@ -18,11 +18,6 @@
 ;; Terminal
 (use-package exec-path-from-shell)
 (setq explicit-shell-file-name "/bin/zsh")
-(add-hook 'ansi-term-mode-hook 'inhibit-global-linum-mode)
-(defun inhibit-global-linum-mode ()
-  (add-hook 'after-change-major-mode-hook
-            (lambda () (linum-mode 0))
-            :append :local))
 (use-package shell-pop)
 (custom-set-variables
   '(shell-pop-shell-type (quote ("ansi-term" "*ansi-term*" (lambda nil (ansi-term shell-pop-term-shell)))))

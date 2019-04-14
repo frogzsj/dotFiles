@@ -79,3 +79,9 @@
 [submodule "emacs/packages/shell-pop-el"]
 	path = emacs/packages/shell-pop-el
 	url = https://github.com/kyagi/shell-pop-el.git
+[submodule "vim/plugged"]
+	path = vim/plugged
+	url = https://github.com/junegunn/vim-plug.git
+[submodule "emacs/packages/markdown-mode"]
+	path = emacs/packages/markdown-mode
+	url = https://github.com/jrblevin/markdown-mode.git

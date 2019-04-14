@@ -1482,6 +1482,21 @@ BODY is the form to evaluate to get the number of things."
 
   :when (derived-mode-p 'neotree-mode))
 
+;; FROGZSJ CUSTOM
+(spaceline-define-segment all-the-icons-evil-state
+  "The current evil state.  Requires `evil-mode' to be enabled."
+  (when (bound-and-true-p evil-local-mode)
+    (let ((current-evil-state (s-trim (evil-state-property evil-state :tag t))))
+      (cond
+       ((string= current-evil-state "<N>") "NOR")
+       ((string= current-evil-state "<I>") "INS")
+       ((string= current-evil-state "<V>") "VIS")
+       ((string= current-evil-state "<M>") "MOT")
+       ((string= current-evil-state "<R>") "REP")
+       ((string= current-evil-state "<E>") "Emacs")
+       (t current-evil-state)))
+  ))
+
 (provide 'spaceline-all-the-icons-segments)
 ;; Local Variables:
 ;; indent-tabs-mode: nil

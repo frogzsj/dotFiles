@@ -37,8 +37,12 @@ cp ~/dotFiles/zsh/zshrc_loader.sh ~/.zshrc
 brew install macvim
 cp ~/dotFiles/vim/vimrc.vim ~/.vimrc
 cp ~/dotFiles/vim/gvimrc.vim ~/.gvimrc
-mkdir ~/.vim && mkdir ~/.vim/colors && cp ~/dotFiles/vim/colors/mine.vim ~/.vim/colors
+mkdir ~/.vim
+mkdir ~/.vim/backup
+mkdir ~/.vim/colors && cp ~/dotFiles/vim/colors/mine.vim ~/.vim/colors
+mkdir ~/.vim/autoload && cp ~/dotFiles/vim/plugged/plug.vim ~/.vim/autoload
 ```
+In Vim, run `:PlugInstall`
 
 5. Install NerdFonts
 ```
