@@ -16,15 +16,9 @@
 [submodule "emacs/packages/projectile"]
 	path = emacs/packages/projectile
 	url = https://github.com/bbatsov/projectile.git
-[submodule "emacs/packages/nlinum-relative"]
-	path = emacs/packages/nlinum-relative
-	url = https://github.com/dangxuandev/nlinum-relative.git
 [submodule "emacs/packages/use-package"]
 	path = emacs/packages/use-package
 	url = https://github.com/jwiegley/use-package.git
-[submodule "emacs/packages/nlinum"]
-	path = emacs/packages/nlinum
-	url = https://github.com/emacsmirror/nlinum.git
 [submodule "emacs/packages/emacs-theme-gruvbox"]
 	path = emacs/packages/emacs-theme-gruvbox
 	url = https://github.com/greduan/emacs-theme-gruvbox.git
@@ -73,3 +67,18 @@
 [submodule "emacs/packages/powerline"]
 	path = emacs/packages/powerline
 	url = https://github.com/Dewdrops/powerline.git
+[submodule "emacs/packages/emacs-git-gutter"]
+	path = emacs/packages/emacs-git-gutter
+	url = https://github.com/syohex/emacs-git-gutter.git
+[submodule "emacs/packages/emacs-winum"]
+	path = emacs/packages/emacs-winum
+	url = https://github.com/deb0ch/emacs-winum.git
+[submodule "emacs/packages/fancy-battery"]
+	path = emacs/packages/fancy-battery
+	url = https://github.com/lunaryorn/fancy-battery.el.git
+[submodule "emacs/packages/ag"]
+	path = emacs/packages/ag
+	url = https://github.com/Wilfred/ag.el.git
+[submodule "emacs/packages/shell-pop-el"]
+	path = emacs/packages/shell-pop-el
+	url = https://github.com/kyagi/shell-pop-el.git

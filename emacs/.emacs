@@ -2,7 +2,9 @@
 (setq
    backup-by-copying t
    backup-directory-alist
-    '(("." . "~/.emacs.d/backup"))
+     '(("." . "~/.emacs.d/backup")
+   auto-save-file-name-transforms
+     ((".*" "~/.emacs.d/backup" t)))
    delete-old-versions t
    kept-new-versions 6
    kept-old-versions 2
