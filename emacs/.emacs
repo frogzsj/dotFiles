@@ -30,5 +30,6 @@
 ;; Setup
 (require 'init-git)
 (require 'init-utils)
+(require 'init-keybinds)
 (require 'init-ui)
 

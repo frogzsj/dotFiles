@@ -58,9 +58,6 @@
 [submodule "emacs/packages/all-the-icons"]
 	path = emacs/packages/all-the-icons
 	url = https://github.com/domtronn/all-the-icons.el.git
-[submodule "emacs/packages/spaceline-all-the-icons"]
-	path = emacs/packages/spaceline-all-the-icons
-	url = https://github.com/domtronn/spaceline-all-the-icons.el.git
 [submodule "emacs/packages/spaceline"]
 	path = emacs/packages/spaceline
 	url = https://github.com/TheBB/spaceline.git
