@@ -1,3 +1,5 @@
+(server-start)
+
 ;; Backup settings
 (setq
    backup-by-copying t

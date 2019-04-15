@@ -73,9 +73,6 @@
 [submodule "emacs/packages/fancy-battery"]
 	path = emacs/packages/fancy-battery
 	url = https://github.com/lunaryorn/fancy-battery.el.git
-[submodule "emacs/packages/ag"]
-	path = emacs/packages/ag
-	url = https://github.com/Wilfred/ag.el.git
 [submodule "emacs/packages/shell-pop-el"]
 	path = emacs/packages/shell-pop-el
 	url = https://github.com/kyagi/shell-pop-el.git

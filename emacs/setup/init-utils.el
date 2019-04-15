@@ -1,3 +1,16 @@
+;; Terminal
+(use-package exec-path-from-shell
+  :config
+  (exec-path-from-shell-initialize))
+(setq explicit-shell-file-name "/bin/zsh")
+(use-package shell-pop)
+(custom-set-variables
+  '(shell-pop-shell-type (quote ("ansi-term" "*ansi-term*" (lambda nil (ansi-term shell-pop-term-shell)))))
+  '(shell-pop-term-shell "/bin/zsh")
+  '(shell-pop-window-size 30)
+  '(shell-pop-full-span t)
+  '(shell-pop-window-position "bottom"))
+
 ;; Ag
 (use-package ag
   :config
@@ -15,18 +28,7 @@
   (projectile-mode 1)
   (recentf-mode 1))
 
-;; Terminal
-(use-package exec-path-from-shell)
-(setq explicit-shell-file-name "/bin/zsh")
-(use-package shell-pop)
-(custom-set-variables
-  '(shell-pop-shell-type (quote ("ansi-term" "*ansi-term*" (lambda nil (ansi-term shell-pop-term-shell)))))
-  '(shell-pop-term-shell "/bin/zsh")
-  '(shell-pop-window-size 30)
-  '(shell-pop-full-span t)
-  '(shell-pop-window-position "bottom"))
-
-;; Kill buffer
+;; Kill this buffer
 (defun kill-this-buffer (&optional arg)
   (interactive "P")
   (if (window-minibuffer-p)

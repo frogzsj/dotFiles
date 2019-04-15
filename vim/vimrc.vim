@@ -43,6 +43,8 @@ Plug 'Yggdroot/indentLine'
 Plug 'Raimondi/delimitMate'
 Plug 'valloric/MatchTagAlways'
 Plug 'liuchengxu/space-vim-dark'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 call plug#end()
 
 colorscheme mine
@@ -85,40 +87,46 @@ vnoremap <D-s> :w<CR>
 nnoremap <D-r> :%s/
 inoremap <D-r> <Esc>:%s/
 vnoremap <D-r> :%s/
-nnoremap <D-b> ``
 nnoremap <D-n> *
-nnoremap <D-.> `.
-nnoremap <D-e> :NERDTreeToggle<CR>
 nnoremap <D-p> :GFiles<CR>
-nnoremap <D-P> :Files<CR>
 nnoremap <D-f> :Ag<CR>
 nnoremap <D-/> :TComment<CR>
-nnoremap <D-d> <C-]>
+nnoremap <D-D> <C-]>
 
 " Leader commands
 let mapleader = ' '
-nnoremap <leader>bn :bnext<CR>
-nnoremap <leader>bb :bprev<CR>
-nnoremap <leader>om %
-nnoremap <leader>oc cs
-nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gd :Gdiff<CR>
-nnoremap <leader>gpl :Gpull<CR>
-nnoremap <leader>gps :Gpush<CR>
-nnoremap <leader>gc :Magit<CR>
-nnoremap <leader>to :terminal<CR>
-nnoremap <leader>q @q
-nnoremap <leader>ws :split<CR>
-nnoremap <leader>wv :vsplit<CR>
-nnoremap <leader>wh <C-w>h
-nnoremap <leader>wj <C-w>j
-nnoremap <leader>wk <C-w>k
-nnoremap <leader>wl <C-w>l
-nnoremap <leader>wcc :close<CR>
-nnoremap <leader>wch <C-w>h:close<CR>
-nnoremap <leader>wcj <C-w>j:close<CR>
-nnoremap <leader>wck <C-w>k:close<CR>
-nnoremap <leader>wcl <C-w>l:close<CR>
+nnoremap <leader>bd     :bdelete<CR>
+nnoremap <leader>bl     :ls<CR>
+nnoremap <leader>bn     :bnext<CR>
+nnoremap <leader>bb     :bprev<CR>
+nnoremap <leader>ff     :Files<CR>
+nnoremap <leader>ft     :NERDTreeToggle<CR>
+nnoremap <leader>om     %
+nnoremap <leader>oc     cs
+nnoremap <leader>gs     :Magit<CR>
+nnoremap <leader>gdf    :Gdiff<CR>
+nnoremap <leader>gpl    :Gpull<CR>
+nnoremap <leader>gPL    :Gpull
+nnoremap <leader>gps    :Gpush<CR>
+nnoremap <leader>gPS    :Gpush
+nnoremap <leader>gpf    :Gpush --force-with-lease<CR>
+nnoremap <leader>grb    :Grebase
+nnoremap <leader>pf     :GFiles<CR>
+nnoremap <leader>ps     :Ag<CR>
+nnoremap <leader>tt     :terminal<CR>
+nnoremap <leader>ss     :Ag<CR>
+nnoremap <leader>qq     @q
+nnoremap <leader>ws     :split<CR>
+nnoremap <leader>w/     :vsplit<CR>
+nnoremap <leader>wh     <C-w>h
+nnoremap <leader>wj     <C-w>j
+nnoremap <leader>wk     <C-w>k
+nnoremap <leader>wl     <C-w>l
+nnoremap <leader>wd     :close<CR>
+nnoremap <leader>wDh    <C-w>h:close<CR>
+nnoremap <leader>wDj    <C-w>j:close<CR>
+nnoremap <leader>wDk    <C-w>k:close<CR>
+nnoremap <leader>wDl    <C-w>l:close<CR>
 function! MarkWindowSwap()
     let g:markedWinNum = winnr()
 endfunction

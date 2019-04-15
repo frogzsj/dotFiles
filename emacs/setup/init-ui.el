@@ -58,7 +58,7 @@
 (use-package powerline)
 (use-package spaceline)
 (use-package spaceline-all-the-icons
-  :after (spaceline magit neotree)
+  :after (spaceline powerline magit neotree)
   :config
   (setq spaceline-all-the-icons-highlight-file-name t)
   (setq spaceline-all-the-icons-separator-type 'none)
@@ -71,6 +71,16 @@
   (setq spaceline-all-the-icons-icon-set-window-numbering (quote square))
   (setq spaceline-all-the-icons-window-number-always-visible t)
   (setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state)
+
+  (defun set-powerline-on-startup-buffers ()
+    "Set the powerline for buffers created when Emacs starts."
+    (dolist (buffer '("*Messages*" "*spacemacs*" "*Compile-Log*"))
+      (when (get-buffer buffer)
+        (with-current-buffer buffer
+          (setq-local mode-line-format (default-value 'mode-line-format))
+          (powerline-set-selected-window)
+          (powerline-reset)))))
+  (add-hook 'emacs-startup-hook 'set-powerline-on-startup-buffers)
 
   ;; Powerline
   (set-face-background 'mode-line gray)

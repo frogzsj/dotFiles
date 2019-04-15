@@ -1,4 +1,5 @@
-(defun fsj-set-marker ()
+(defun set-marker-here (&optional arg)
+  (interactive "P")
   (set-mark-command)
   (set-mark-command))
 
@@ -6,7 +7,6 @@
 (use-package evil
   :after magit
   :config
-  (evil-mode 1)
   (evil-define-key 'normal neotree-mode-map (kbd "SPC") 'neotree-quick-look)
   (evil-define-key 'normal neotree-mode-map (kbd "q") 'neotree-hide)
   (evil-define-key 'normal neotree-mode-map (kbd "RET") 'neotree-enter)
@@ -42,7 +42,11 @@
 (use-package evil-leader
   :after evil
   :config
-  (global-evil-leader-mode)
+  (setq evil-leader/in-all-states t)
+  (evil-mode nil)
+  (global-evil-leader-mode 1)
+  (evil-mode 1)
+  (kill-buffer "*Messages*")
   (evil-leader/set-leader "<SPC>")
   (evil-leader/set-key
     "bn" 'next-buffer
@@ -55,8 +59,10 @@
     "fL" 'load-file
     "ft" 'neotree-toggle
     "gs" 'magit-status
-    "ms" 'fsj-set-marker
-    "mj" '(set-mark-command 1)
+    "gps" 'magit-push
+    "gpl" 'magit-pull
+    "ms" '(set-marker-here 1)
+    "mj" '(set-mark-command 0)
     "mG" 'pop-gloabl-mark
     "pd" 'projectile-find-dir
     "pf" 'projectile-find-file
