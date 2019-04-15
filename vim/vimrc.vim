@@ -1,20 +1,26 @@
+"___________________________________________________________________________________________
+"_/\\\________/\\\__/\\\\\\\\\\\__/\\\\\___________/\\\\____/\\\\\\\\\\___________/\\\\\\\\\_
+"_\/\\\_______\/\\\_\/////\\\///__\/\\\\\\________/\\\\\\__/\\\///////\\\_______/\\\////////__
+" _\//\\\_____/\\\______\/\\\_____\/\\\//\\\____/\\\//\\\_\/\\\_____\/\\\_____/\\\/___________
+"  __\//\\\____/\\\_______\/\\\_____\/\\\\///\\\/\\\/_\/\\\_\/\\\\\\\\\\\______/\\\_____________
+"   ___\//\\\__/\\\________\/\\\_____\/\\\__\///\\\/___\/\\\_\/\\\//////\\\____\/\\\_____________
+"    ____\//\\\/\\\_________\/\\\_____\/\\\____\///_____\/\\\_\/\\\____\//\\\___\//\\\____________
+"     _____\//\\\\\__________\/\\\_____\/\\\_____________\/\\\_\/\\\_____\//\\\___\///\\\__________
+"      ______\//\\\________/\\\\\\\\\\\_\/\\\_____________\/\\\_\/\\\______\//\\\____\////\\\\\\\\\_
+"       _______\///________\///////////__\///______________\///__\///________\///________\/////////__
 " == VimPlug ==
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': 'NERDTreeToggle' }
 Plug 'ryanoasis/vim-devicons'
-
 Plug 'SirVer/ultisnips'
 Plug 'tomtom/tcomment_vim'
-
 Plug 'scrooloose/syntastic'
 Plug 'pangloss/vim-javascript'
 Plug 'hail2u/vim-css3-syntax'
@@ -26,19 +32,14 @@ Plug 'elzr/vim-json'
 Plug 'jaxbot/syntastic-react'
 Plug 'mxw/vim-jsx'
 Plug 'mtscout6/syntastic-local-eslint.vim'
-
 Plug 'flazz/vim-colorschemes'
 Plug 'gorodinskiy/vim-coloresque'
-
 Plug 'tpope/vim-surround'
-
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'jreybert/vimagit'
-
 Plug 'w0rp/ale'
 Plug 'obxhdx/vim-auto-highlight'
-
 Plug 'Yggdroot/indentLine'
 Plug 'Raimondi/delimitMate'
 Plug 'valloric/MatchTagAlways'
@@ -48,7 +49,6 @@ Plug 'plasticboy/vim-markdown'
 call plug#end()
 
 colorscheme mine
-
 set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 set relativenumber number cursorline
 set laststatus=2
@@ -91,6 +91,7 @@ nnoremap <D-n> *
 nnoremap <D-p> :GFiles<CR>
 nnoremap <D-f> :Ag<CR>
 nnoremap <D-/> :TComment<CR>
+vnoremap <D-/> :TComment<CR>
 nnoremap <D-D> <C-]>
 
 " Leader commands
@@ -205,11 +206,10 @@ function! s:RemoveTrailingWhitespaces()
   "Save last cursor position
   let l = line('.')
   let c = col('.')
-
   %s/\s\+$//ge
-
   call cursor(l,c)
 endfunction
 autocmd BufWritePre  * :call <SID>RemoveTrailingWhitespaces()
 autocmd BufWritePost * :call system("ctags -R --exclude=*.vim")
 autocmd bufenter * if (winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) | q | endif
+
