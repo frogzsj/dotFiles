@@ -19,7 +19,7 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight', { 'on': 'NERDTreeToggle' }
 Plug 'ryanoasis/vim-devicons'
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 Plug 'tomtom/tcomment_vim'
 Plug 'scrooloose/syntastic'
 Plug 'pangloss/vim-javascript'
@@ -195,11 +195,11 @@ let g:airline_solarized_bg='dark'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 "" Snippets
-let g:UltiSnipsExpandTrigger='<Tab>'
-let g:UltiSnipsJumpForwardTrigger='<C-b>'
-let g:UltiSnipsJumpBackwardTrigger='<C-z>'
-let g:UltiSnipsEditSplit='vertical'
-let g:UltiSnipsSnippetDirectories = [$HOME.'/dotFiles/vim']
+" let g:UltiSnipsExpandTrigger='<Tab>'
+" let g:UltiSnipsJumpForwardTrigger='<C-b>'
+" let g:UltiSnipsJumpBackwardTrigger='<C-z>'
+" let g:UltiSnipsEditSplit='vertical'
+" let g:UltiSnipsSnippetDirectories = [$HOME.'/dotFiles/vim']
 
 " Automcommands
 function! s:RemoveTrailingWhitespaces()
